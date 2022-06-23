@@ -54,7 +54,10 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 Set-DnsClientServerAddress -InterfaceIndex `Id` -ServerAddresses `IP Address`
  ```
 
-6. Joined client workstation to domain
+# Joining client workstation to domain
+
+
+
 ```shell
 Add-Computer -DomainName domain.com -Credential AD\User -Force -restart
 ```
