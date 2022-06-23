@@ -11,10 +11,11 @@
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 3. Reconfigured DNS after Active Directory installation
-
-    3.1 Used to identify `InterfaceIndex`
+    - Used to identify `InterfaceIndex`
 ```shell
 Get-NetIPAddress 
+
+Ex.
 
 IPAddress         : 192.168.xx.xx
 `InterfaceIndex    : 7`
@@ -31,9 +32,11 @@ SkipAsSource      : False
 PolicyStore       : ActiveStore
 ```
 
-        3.2 Used to ifentify current DNS assignment
+4. Used to ifentify current DNS assignment
 ```shell
 Get-DnsClientServerAddress
+ 
+ Ex. 
 
 InterfaceAlias               Interface Address ServerAddresses
                             Index     Family
@@ -46,7 +49,7 @@ Loopback Pseudo-Interface 1          1 IPv4    {}
 Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
 ```
 
-        3.3 Used to set DNS for desired interface
+5. Used to set DNS for desired interface
 ```shell
 Set-DnsClientServerAddress -InterfaceIndex `Id` -ServerAddresses `IP Address`
  ```
